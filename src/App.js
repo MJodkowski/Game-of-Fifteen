@@ -1,54 +1,76 @@
 import React, { Component } from 'react';
-import Board from './containers/Board'
-import ChooseSize from './components/ChooseSize';
-import WinScreen from './components/WinScreen';
+import Board from './containers/Board/Board'
+import ChooseSize from './components/ChooseSize/ChooseSize';
+import WinScreen from './components/WinScreen/WinScreen';
+import Wrapper from './AuxComponent/Wrapper';
+import Header from './components/Header/Header';
+import SideBar from './components/SideBar/SideBar';
+import classes from './App.css';
+import Modal from './components/Modal/Modal';
 
 class App extends Component {
   state = {
     won: false,
     game: false,
-    size: 3
+    size: 3,
+    modal: false,
+    drawer: false
   }
-  changeGameState(stateName, newState) {
+  board = React.createRef();
+  changeGameState = (stateName, newState) => {
     this.setState({[stateName]: newState});
   }
-  toggleGame() {
-    const currState = this.state.game;
-    this.setState({game: !currState});
+  hideModal = () => {
+    this.setState({modal: false});
   }
-  toggleWon() {
-    const currState = this.state.won;
-    this.setState({won: !currState});
+  hideDrawer = () => {
+    this.setState({drawer: false});
   }
-  changeSize(size) {
-    if (size < 3) {
-      size = 3;
-    } else if (size > 8) {
-      size = 8;
-    }
-    this.setState({size: size})
+  reset = () => {
+    this.board.current.initializeBoard();
   }
-  // displayBoard() {
-  // this.board = (<Board changeState={() => this.changeGameState.bind(this)}/>);
-  // }
   render() {
+    let mainDisplay = null;
+
     if (this.state.game){
-      return (
-      <Board gameToggle={this.toggleGame.bind(this)} wonToggle={this.toggleWon.bind(this)} />
+      mainDisplay = (
+      <Board
+        ref={this.board}
+        size={this.state.size} 
+        changeState={this.changeGameState} 
+      />
     )} else if (this.state.won) {
-      return (
-        <div>
-          <WinScreen clickHandler={(this.toggleWon.bind(this))} />
-        </div>
+      mainDisplay = (
+        <WinScreen />
       );
     } else {
-      return (
-        <div>
-          <ChooseSize sizeHandler={this.changeSize.bind(this)} clickHandler={(this.toggleGame.bind(this))} size={this.state.size} />
-        </div>
+      mainDisplay = (
+        <ChooseSize 
+          changeState={this.changeGameState} 
+          size={this.state.size} 
+        />
       );
     }
+    return (
+
+      <Wrapper>
+        <Header />
+        <SideBar
+            drawer={this.state.drawer}
+            game={this.state.game}
+            won={this.state.won}
+            reset={this.reset}
+            changeState={this.changeGameState}
+            clickHandler={this.hideDrawer}/>
+        <div className={classes.mainContainer}>
+            {mainDisplay}
+          <button onClick={() => this.setState({drawer: true})}className={classes.sideButton}>></button>
+          <Modal display={this.state.modal} changeState={this.changeGameState} clickHandler={this.hideModal} />
+        </div>
+      </Wrapper>
+    )
   }
 }
 
 export default App;
+

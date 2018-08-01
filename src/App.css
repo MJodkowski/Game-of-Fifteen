@@ -1,0 +1,25 @@
+.mainContainer {
+    z-index: 0;
+    display: flex;
+    flex-direction: row;
+    background-color: navy;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.sideButton {
+    display: none;
+}
+@media (max-width:499px) {
+    .sideButton {
+        display: block;
+        position: fixed;
+        left: 0;
+        top: 45%;
+        height: 5%;
+        width: 5%;
+        text-align: center;
+        padding: 0 2px;
+        z-index: 0;
+    }
+}
