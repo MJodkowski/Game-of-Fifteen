@@ -16,20 +16,20 @@ const sideBar = (props) => {
     }
     let sidebarClasses = classes.SideBar;
 
-    if (window.innerWidth <= 499) {
-        sidebarClasses = classes.closed;
-    }
+
     if (props.drawer) {
-        sidebarClasses = classes.open;
+        sidebarClasses = `${classes.SideBar} ${classes.open}`;
     }
 
     return (
         <Wrapper>
             <Backdrop clickHandler={props.clickHandler} state={props.drawer}/>
-            <div className={sidebarClasses}>
-                <button key='b1' onClick={() => props.changeState('game', false)} disabled={disableButton()}>New Game</button>
-                <button key='b2' onClick={props.reset} disabled={!props.game}>Reset</button> 
-                <button key='b3' onClick={() => props.changeState('modal', true)}>How to Play</button>
+            <div className={sidebarClasses} onClick={(e) => e.target.tagName === 'BUTTON' ? props.changeState('drawer', false) : null}>
+                <ul className={classes['button-list']}>
+                    <li><button className={classes.button} key='b1' onClick={() => props.changeState('game', false)} disabled={disableButton()}>New Game</button></li>
+                    <li><button className={classes.button} key='b2' onClick={props.reset} disabled={!props.game}>Reset</button></li>
+                    <li><button className={classes.button} key='b3' onClick={() => props.changeState('modal', true)}>How to Play</button></li>
+                </ul>
             </div>
         </Wrapper>
     );

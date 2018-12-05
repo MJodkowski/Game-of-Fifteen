@@ -5,20 +5,20 @@ import Aux from '../../AuxComponent/Wrapper';
 
 
 const modal = (props) => (
-    <Aux>  
+        <Aux>  
         <Backdrop clickHandler={props.clickHandler} state={props.display} />
-        <div style={
-            {visibility: props.display ? 'true' : 'false',
-            opacity: props.display ? '1' : '0', 
-            transform: props.display ? 'translateX(0)' : 'translateX(-100vh)'}} 
-            className={classes.Modal} >
-            <button className={classes.button}>X</button>
-            <p>Modal!</p>
+        <div 
+            className={props.display ? classes.Modal : `${classes.Modal} ${classes.invisible}`} >
+            <button onClick={() => props.clickHandler()} className={classes.button}>X</button>
+            <h2 className={classes.subheader}>How to Play</h2>
+            <p>The goal of the game is to rearrange the tiles in reverse order (the empty slot has to remain in the bottom-right corner of the board). 
+            Clicking a tile will slide it into the empty slot. Only tiles adjacent to the empty slot may be moved.</p>
+            <p>If you wish to start over, click the 'Reset' button.</p>
+            <p>If you wish to start over on a different-sized board, click the 'New Game' button.</p>
+            <br />
+            <p>Have fun!</p>
         </div>
-    </Aux>
+        </Aux>
 );
 
 export default modal;
-
-// {/* 
-//  */}

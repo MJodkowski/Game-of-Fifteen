@@ -1,8 +1,25 @@
 .Board {
     margin: 0 auto;
     display: flex;
-    width: 120px;
+    width: 35vw;
+    height: 35vw;
+    max-width: 500px;
+    max-height: 500px;
     flex-wrap: wrap;
-    /* height: '120px'; */
     align-self: center;
+    border: 2px solid black;
+}
+
+@media (orientation: portrait) {
+    .Board {
+        width: 40vh;
+        height: 40vh;
+    }
+}
+
+@media (max-width: 50rem) and (orientation: landscape) {
+    .Board {
+        width: 60vh;
+        height: 60vh;
+    }
 }

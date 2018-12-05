@@ -4,7 +4,8 @@ import classes from './Tile.css';
 const tile = (props) => {
     const style = {
         width: props.size,
-        height: props.size
+        height: props.size,
+        fontSize: props.fontSize
     }
 
     if (props.value === 0) {

@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 .mainContainer {
     z-index: 0;
     display: flex;
@@ -10,16 +14,31 @@
 .sideButton {
     display: none;
 }
-@media (max-width:499px) {
+
+/* Disable number input field spinner */
+
+input[type=number] {
+    -moz-appearance: textfield;
+  }
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+@media (max-width: 40rem) {
     .sideButton {
+        font-family: 'Exo', sans-serif;
+        background-color: firebrick;
+        border: 1px solid black;
+        color: mintcream;
         display: block;
         position: fixed;
         left: 0;
-        top: 45%;
-        height: 5%;
-        width: 5%;
+        top: calc(50% - 0.65rem);
+        height: 1.3rem;
+        width: 1.3rem;
         text-align: center;
-        padding: 0 2px;
+        padding: 0 0.2rem;
         z-index: 0;
     }
 }

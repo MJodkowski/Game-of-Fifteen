@@ -1,5 +1,55 @@
 .ChooseSize {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin: 0 auto;
-    align-self: center;
+    color: mintcream;
+}
+.subheader {
+    font-size: 1.5rem;
+}
+.input {
+    font-size: 3rem;
+    color: mintcream;
+    border: none;
+    background-color:navy;
+    cursor: default;
     text-align: center;
+}
+.playButton {
+    height: 3rem;
+    width: 3rem;
+    margin-top: 2rem;
+    background-color: firebrick;
+    border: 1px solid black;
+    border-radius: 20%;
+    color: mintcream;
+    font-size: 1rem;
+}
+.playButton:active {
+    background-color: darkred;
+}
+.sizeButton{
+    width: 0;
+    height: 0;
+    padding: 0;
+    color: transparent;
+    background-color: navy;
+    border-style: solid;
+}
+.upButton {
+    border-width: 0 1.3rem 1.3rem 1.3rem;
+    border-color: transparent transparent firebrick transparent;
+}
+.downButton {
+    border-width: 1.3rem 1.3rem 0 1.3rem;
+    border-color: firebrick transparent transparent transparent;
+}
+
+.upButton:active {
+    border-color: transparent transparent darkred transparent;
+}
+
+.downButton:active {
+    border-color: darkred transparent transparent transparent;
 }

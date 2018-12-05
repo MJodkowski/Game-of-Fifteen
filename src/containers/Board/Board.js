@@ -6,15 +6,13 @@ import classes from './Board.css';
 
 
 class Board extends Component {
-    TILE_SIZE = Math.round(window.innerHeight / 2 / this.props.size);
+    TILE_SIZE = `${100 / this.props.size}%`
+    TEXT_SIZE = 120 / this.props.size;
     componentWillMount() {
       this.initializeBoard();
     }
     initializeBoard() {
       const board = [];
-      this.setState({style: {width: this.props.size * this.TILE_SIZE,
-                    height: this.props.size * this.TILE_SIZE
-      }});
       let idCounter = this.props.size ** 2 - 1;
       for (let x = 0; x < this.props.size; x++) {
         for (let y = 0; y < this.props.size; y++) {
@@ -22,9 +20,7 @@ class Board extends Component {
           idCounter--;
         }
       }
-      this.setState({
-        board: board 
-      });
+      this.setState({board});
     }
     createTiles(board) {
       if (!board) {
@@ -34,7 +30,8 @@ class Board extends Component {
         return <Tile 
           key={index} 
           value={this.state.board[index].value}
-          size={this.TILE_SIZE} 
+          size={this.TILE_SIZE}
+          fontSize={this.TEXT_SIZE} 
           move={(e) => this.clickHandler(e)}>
         </Tile>;
       });
@@ -81,17 +78,13 @@ class Board extends Component {
           wincounter ++;
         }
       }
-      if (wincounter === this.props.size ** 2 - 1) {
-        return true;
-        } else {
-          return false;
-      }
+      return wincounter === this.props.size ** 2 - 1;
     }
 
     render() {
       const currBoard = this.createTiles(this.state.board);
       return (
-        <div style={this.state.style} className={classes.Board}>{currBoard}</div>
+        <div className={classes.Board}>{currBoard}</div>
       );
     }
   }
