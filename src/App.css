@@ -25,20 +25,22 @@ input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-@media (max-width: 40rem) {
+@media (max-width: 50rem) {
     .sideButton {
         font-family: 'Exo', sans-serif;
         background-color: firebrick;
         border: 1px solid black;
         color: mintcream;
-        display: block;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         position: fixed;
         left: 0;
         top: calc(50% - 0.65rem);
         height: 1.3rem;
         width: 1.3rem;
         text-align: center;
-        padding: 0 0.2rem;
+        padding: 0;
         z-index: 0;
     }
 }

@@ -23,7 +23,7 @@ const sideBar = (props) => {
 
     return (
         <Wrapper>
-            <Backdrop clickHandler={props.clickHandler} state={props.drawer}/>
+            <Backdrop clickHandler={props.clickHandler} state={props.drawer} />
             <div className={sidebarClasses} onClick={(e) => e.target.tagName === 'BUTTON' ? props.changeState('drawer', false) : null}>
                 <ul className={classes['button-list']}>
                     <li><button className={classes.button} key='b1' onClick={() => props.changeState('game', false)} disabled={disableButton()}>New Game</button></li>

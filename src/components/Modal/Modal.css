@@ -1,11 +1,10 @@
 .Modal {
+    position: fixed;
     z-index: 3;
-    position: absolute;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     width: 60%;
-    top: 20%;
     padding: 2rem 1rem;
     transition: all 0.3s ease-out;
     line-height: 150%;
@@ -47,8 +46,6 @@
 @media (max-width: 40rem) {
     .Modal {
         width: 80%;
-        top: 20%;
-        height: 60%;
         font-size: 0.8rem;
         padding: 0.3rem 0;
     }
@@ -57,8 +54,6 @@
 @media (max-height:26.5rem) {
     .Modal {
         width: 80%;
-        top: 20%;
-        height: 60%;
         font-size: 0.7rem;
         padding-top: 5px;
         padding-bottom: 5px;
