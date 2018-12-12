@@ -43,7 +43,7 @@
     background-color: orangered; 
 }
 
-@media (max-width: 40rem) {
+@media (max-width: 640px) {
     .Modal {
         width: 80%;
         font-size: 0.8rem;
@@ -51,7 +51,7 @@
     }
 }
 
-@media (max-height:26.5rem) {
+@media (max-height: 424px) {
     .Modal {
         width: 80%;
         font-size: 0.7rem;

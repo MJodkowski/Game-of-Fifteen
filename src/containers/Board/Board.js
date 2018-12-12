@@ -56,16 +56,7 @@ class Board extends Component {
       }
     }
     checkMoveLegal(a, b) {
-      if (a === undefined || b === undefined) {
-        return false;
-      } else if ((a.coordinates[0] - 1 === b.coordinates[0] 
-        && a.coordinates[1] === b.coordinates[1]) 
-        ||  (a.coordinates[0] + 1 === b.coordinates[0] 
-        && a.coordinates[1] === b.coordinates[1]) 
-        ||  (a.coordinates[1] + 1 === b.coordinates[1] 
-        && a.coordinates[0] === b.coordinates[0]) 
-        || (a.coordinates[1] - 1 === b.coordinates[1] 
-        && a.coordinates[0] === b.coordinates[0])) {
+      if (Math.sqrt(Math.pow(b.coordinates[0] - a.coordinates[0], 2) + Math.pow(b.coordinates[1] - a.coordinates[1], 2)) === 1) {
         return true;
       } else {
         return false;

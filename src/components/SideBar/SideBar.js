@@ -14,8 +14,8 @@ const sideBar = (props) => {
             return false;
         }
     }
-    let sidebarClasses = classes.SideBar;
 
+    let sidebarClasses = classes.SideBar;
 
     if (props.drawer) {
         sidebarClasses = `${classes.SideBar} ${classes.open}`;
@@ -26,7 +26,7 @@ const sideBar = (props) => {
             <Backdrop clickHandler={props.clickHandler} state={props.drawer} />
             <div className={sidebarClasses} onClick={(e) => e.target.tagName === 'BUTTON' ? props.changeState('drawer', false) : null}>
                 <ul className={classes['button-list']}>
-                    <li><button className={classes.button} key='b1' onClick={() => props.changeState('game', false)} disabled={disableButton()}>New Game</button></li>
+                    <li><button className={classes.button} key='b1' onClick={() => props.won ? props.changeState('won', false) : props.changeState ('game', false)} disabled={disableButton()}>New Game</button></li>
                     <li><button className={classes.button} key='b2' onClick={props.reset} disabled={!props.game}>Reset</button></li>
                     <li><button className={classes.button} key='b3' onClick={() => props.changeState('modal', true)}>How to Play</button></li>
                 </ul>

@@ -1,9 +1,10 @@
 import React from 'react';
+import classes from './WinScreen.css';
 
 const winScreen = (props) => {
     return (
         <div>
-            <p>Congrats, you win!</p>
+            <p className={classes.winPara}>Congrats, you win!</p>
         </div>
     )
 }

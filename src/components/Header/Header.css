@@ -17,16 +17,3 @@
 .heading {
     margin: 0.2rem 0;
 }
-
-/* @media (max-width: 40rem) {
-    .Header {
-        font-size: 0.9rem;
-    }
-} */
-
-@media (max-width: 50rem) and (orientation: landscape) {
-    .Header {
-        font-size: 0.7rem;
-        height: auto;
-    }
-}
