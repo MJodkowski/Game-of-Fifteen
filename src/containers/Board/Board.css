@@ -1,6 +1,7 @@
 .Board {
     margin: 0 auto;
     display: flex;
+    background-color: darkred;
     width: 35vw;
     height: 35vw;
     max-width: 500px;

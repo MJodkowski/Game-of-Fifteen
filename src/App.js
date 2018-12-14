@@ -54,7 +54,7 @@ class App extends Component {
     return (
 
       <Wrapper>
-        <Header />
+        <Header/>
         <SideBar
             drawer={this.state.drawer}
             game={this.state.game}

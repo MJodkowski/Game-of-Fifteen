@@ -12,10 +12,16 @@
     background-color: black;
     color: black
 }
-.Tile:hover {
+/* .Tile:hover {
     background-color: orangered;
-}
+} */
 .Tile:active {
     background-color: darkred;
     color: darkred;
+}
+
+@media (min-width: 1000px) {
+    .Tile:hover {
+        background-color: orangered;
+    }
 }
