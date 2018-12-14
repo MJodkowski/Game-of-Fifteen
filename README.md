@@ -1,9 +1,10 @@
 # GAME OF FIFTEEN
+
+Live: https://mjodkowski.github.io/Game-of-Fifteen/
+
 Created using Create-React-App with CSS Modules.
 
 Note: Please add the page to the home screen to ensure optimal performance on mobile devices
-
-Live: https://mjodkowski.github.io/Game-of-Fifteen/
 
 ## Overview
 
