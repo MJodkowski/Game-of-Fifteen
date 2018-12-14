@@ -1,5 +1,6 @@
 # GAME OF FIFTEEN
-Created using Create-React-App with CSS Modules.A
+Created using Create-React-App with CSS Modules.
+
 Note: Please add the page to the home screen to ensure optimal performance on mobile devices
 
 
