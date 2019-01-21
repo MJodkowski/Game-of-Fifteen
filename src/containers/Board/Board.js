@@ -6,7 +6,7 @@ import classes from './Board.css';
 
 
 class Board extends Component {
-    TILE_SIZE = `${100 / this.props.size}%`
+    TILE_SIZE = `${100 / this.props.size}%`;
     TEXT_SIZE = 120 / this.props.size;
     componentWillMount() {
       this.initializeBoard();
